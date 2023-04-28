@@ -63,7 +63,7 @@ def get_update_user(user_id):
 
 
 @app_views.route("/users/<user_id>", methods=['DELETE'])
-def delete_user(delete_id):
+def delete_user(user_id):
     """ deletes a User object by its id, otherwise if
     object is not in the storage, 404 status code is returned
     """
