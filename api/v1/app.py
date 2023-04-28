@@ -2,12 +2,16 @@
 """
 This module contains the flask app factory
 """
-from flask import Flask, make_response, jsonify
-from models import storage
 from api.v1.views import app_views
+from flask import Flask, make_response, jsonify
+from flask_cors import CORS
+from models import storage
 import os
 
+
 app = Flask(__name__)
+# set Cross-origin resource sharing origin header
+CORS(app, origin='0.0.0.0')
 app.url_map.strict_slashes = False
 
 # Register blueprints
