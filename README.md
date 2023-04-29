@@ -161,7 +161,7 @@ Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://tw
 
 Second part of Airbnb: Joann Vuong
 
-    ### Third part of the Airbnb project (v3)
-    * Taiwo Babalola - [Github](https://github.com/Taiwopeter-babs) [Twitter](https://twitter.com/realtaiwo_peter)
+### Third part of the Airbnb project (v3)
+Taiwo Babalola - [Github](https://github.com/Taiwopeter-babs) [Twitter](https://twitter.com/realtaiwo_peter)
 ## License
 Public Domain. No copy write protection. 
