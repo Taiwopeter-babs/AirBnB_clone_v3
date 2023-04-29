@@ -1,12 +1,14 @@
-# AirBnB Clone - The Console
-The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+# AirBnB Clone - REST APIs
+The REST API is the third segment of the AirBnB project at ALX software engineering that will collectively cover fundamental concepts of creating RESTful apis. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB).
 
-#### Functionalities of this command interpreter:
-* Create a new object (ex: a new User or a new Place)
-* Retrieve an object from a file, a database etc...
-* Do operations on objects (count, compute stats, etc...)
-* Update attributes of an object
-* Destroy an object
+## Functionalities of this project:
+    ### The console
+    * Create a new object (ex: a new User or a new Place)
+    * Retrieve an object from a file, a database etc...
+    * Do operations on objects (count, compute stats, etc...)
+    * Update attributes of an object
+    * Destroy an object
+    ### REST APIs
 
 ## Table of Content
 * [Environment](#environment)
@@ -158,5 +160,8 @@ Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twit
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
 
 Second part of Airbnb: Joann Vuong
+
+    ### Third part of the Airbnb project (v3)
+    * Taiwo Babalola - [Github](https://github.com/Taiwopeter-babs) [Twitter](https://twitter.com/realtaiwo_peter)
 ## License
 Public Domain. No copy write protection. 
