@@ -1,1 +1,31 @@
-{"State.11e3fd6b-621b-4de5-8b9e-9b226513bbc2": {"name": "Lagos", "created_at": "2023-04-27T11:09:06.287618", "updated_at": "2023-04-27T11:09:06.287728", "id": "11e3fd6b-621b-4de5-8b9e-9b226513bbc2", "__class__": "State"}, "State.651b4ef8-7b30-4c36-84a5-d1f58ce0d7f6": {"name": "Lagos", "created_at": "2023-04-27T11:11:12.039915", "updated_at": "2023-04-27T11:11:12.040029", "id": "651b4ef8-7b30-4c36-84a5-d1f58ce0d7f6", "__class__": "State"}, "City.9f8c745a-522f-4a91-b590-e74dc10dfb41": {"name": "Ikeja", "created_at": "2023-04-27T11:11:12.178881", "updated_at": "2023-04-27T11:11:12.179078", "id": "9f8c745a-522f-4a91-b590-e74dc10dfb41", "__class__": "City"}}
+{
+    "State.11e3fd6b-621b-4de5-8b9e-9b226513bbc2": {
+        "name": "Lagos",
+        "created_at": "2023-04-27T11:09:06.287618",
+        "updated_at": "2023-04-27T11:09:06.287728",
+        "id": "11e3fd6b-621b-4de5-8b9e-9b226513bbc2",
+        "__class__": "State"
+    },
+    "State.651b4ef8-7b30-4c36-84a5-d1f58ce0d7f6": {
+        "name": "Lagos",
+        "created_at": "2023-04-27T11:11:12.039915",
+        "updated_at": "2023-04-27T11:11:12.040029",
+        "id": "651b4ef8-7b30-4c36-84a5-d1f58ce0d7f6",
+        "__class__": "State"
+    },
+    "City.9f8c745a-522f-4a91-b590-e74dc10dfb41": {
+        "name": "Ikeja",
+        "created_at": "2023-04-27T11:11:12.178881",
+        "updated_at": "2023-04-27T11:11:12.179078",
+        "id": "9f8c745a-522f-4a91-b590-e74dc10dfb41",
+        "__class__": "City"
+    },
+    "User.e717a4f3-7687-432a-aa12-55a8e9a28004": {
+        "name": "Taiwo",
+        "password": "e16b2ab8d12314bf4efbd6203906ea6c",
+        "created_at": "2023-04-29T20:35:10.543927",
+        "updated_at": "2023-04-29T20:35:10.544024",
+        "id": "e717a4f3-7687-432a-aa12-55a8e9a28004",
+        "__class__": "User"
+    }
+}
