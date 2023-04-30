@@ -113,3 +113,21 @@ class TestFileStorage(unittest.TestCase):
         with open("file.json", "r") as f:
             js = f.read()
         self.assertEqual(json.loads(string), json.loads(js))
+
+    @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
+    def test_get_count(self):
+        """Test that get and count methods work"""
+        try:
+            os.remove("file.json")
+        except FileNotFoundError:
+            pass
+
+        storage = FileStorage()
+
+        num_of_objs = storage.count()
+
+        state = State(name="Kaduna")
+        state.save()
+        mystate = storage.get("State", state.id)
+        self.assertIsNotNone(mystate)
+        self.assertEqual(num_of_objs + 1, storage.count())
