@@ -4,6 +4,7 @@ Contains class BaseModel
 """
 
 from datetime import datetime
+import hashlib
 import models
 from os import getenv
 import sqlalchemy
@@ -55,6 +56,8 @@ class BaseModel:
     def save(self):
         """updates the attribute 'updated_at' with the current datetime"""
         self.updated_at = datetime.utcnow()
+        if "password" in self.__dict__:
+            self.password = hashlib.md5(self.password.encode()).hexdigest()
         models.storage.new(self)
         models.storage.save()
 
