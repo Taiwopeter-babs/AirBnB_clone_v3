@@ -122,17 +122,16 @@ def places_search():
 
     request_dict = request.get_json()
 
-    if len(request_dict) == 0:
+    if len(request_dict) == 0 or (
+            not states and
+            not cities and
+            not amenities):
         places = [obj.to_dict() for obj in storage.all("Place").values()]
         return jsonify(places)
 
     states = request_dict.get("states")
     cities = request_dict.get("cities")
     amenities = request_dict.get("amenities")
-
-    if not states and not cities and not amenities:
-        places = [obj.to_dict() for obj in storage.all("Places").values()]
-        return jsonify(places)
 
     all_list = []
     if states:
@@ -154,7 +153,7 @@ def places_search():
     if amenities:
         if not all_list:
             all_list = [obj for obj in storage.all("Place").values()]
-        for amen_id in amenities:
+        for am_id in amenities:
             am_obj = storage.get("Amenity", am_id)
             amenity_list.append(am_obj)
 
