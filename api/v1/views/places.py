@@ -105,3 +105,66 @@ def delete_place(place_id):
         storage.save()
         return (jsonify({}), 200)
     abort(404)
+
+
+@app_views.route("/places_search", methods=['GET', 'POST'])
+def places_search():
+    """
+    This route searches for Place objects in keys `states`, `cities`,
+    and `amenities` in the JSON body request.
+    If the `amenities` key list is not empty, only place objects which
+    have all the amenities in the list will be returned, otherwise, every
+    Place object in every city in `cities` and every Place object in each
+    City object in each State object in cities will be returned
+    """
+    if not request.json:
+        return make_response(jsonify("Not a JSON"), 400)
+
+    request_dict = request.get_json()
+
+    if not request_dict:
+        places = [obj.to_dict() for obj in storage.all("Place").values()]
+        return jsonify(places)
+
+    states = request_dict.get("states")
+    cities = request_dict.get("cities")
+    amenities = request_dict.get("amenities")
+
+    if not states and not cities and not amenities:
+        places = [obj.to_dict() for obj in storage.all("Places").values()]
+        return jsonify(places)
+
+    all_list = []
+    if states:
+        for st_id in states:
+            st_obj = storage.get("State", st_id)
+            if st_obj:
+                for city in st_obj.cities:
+                    for place in city.places:
+                        all_list.append(place)
+
+    if cities:
+        for ci_id in cities:
+            city_obj = storage.get("City", ci_id)
+            if city_obj:
+                for place in city_obj.places:
+                    all_list.append(place)
+
+    amenity_list = []
+    if amenities:
+        if not all_list:
+            all_list = [obj for obj in storage.all("Place").values]
+        for amen_id in amenities:
+            am_obj = storage.get("Amenity", am_id)
+            amenity_list.append(am_obj)
+
+        """This will check each place_obj.amenities list and return either
+        True or False if all the objects in amenities are in
+        place_obj.amenities
+        """
+        all_list = [obj for obj in all_list
+                    if all(am_obj in obj.amenities for am_obj in amenity_list)]
+
+    return_list = [obj.to_dict() for obj in all_list]
+
+    return jsonify(return_list)
