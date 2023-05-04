@@ -153,7 +153,7 @@ def places_search():
     amenity_list = []
     if amenities:
         if not all_list:
-            all_list = [obj for obj in storage.all("Place").values]
+            all_list = [obj for obj in storage.all("Place").values()]
         for amen_id in amenities:
             am_obj = storage.get("Amenity", am_id)
             amenity_list.append(am_obj)
