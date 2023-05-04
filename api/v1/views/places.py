@@ -162,7 +162,8 @@ def places_search():
         place_obj.amenities
         """
         all_list = [obj for obj in all_list
-                    if all(am_obj in obj.amenities for am_obj in amenity_list)]
+                    if all([am_obj in obj.amenities
+                            for am_obj in amenity_list])]
 
     return_list = [obj.to_dict() for obj in all_list]
 
