@@ -122,16 +122,16 @@ def places_search():
 
     request_dict = request.get_json()
 
+    states = request_dict.get("states")
+    cities = request_dict.get("cities")
+    amenities = request_dict.get("amenities")
+
     if len(request_dict) == 0 or (
             not states and
             not cities and
             not amenities):
         places = [obj.to_dict() for obj in storage.all("Place").values()]
         return jsonify(places)
-
-    states = request_dict.get("states")
-    cities = request_dict.get("cities")
-    amenities = request_dict.get("amenities")
 
     all_list = []
     if states:
