@@ -122,7 +122,7 @@ def places_search():
 
     request_dict = request.get_json()
 
-    if not request_dict:
+    if len(request_dict) == 0:
         places = [obj.to_dict() for obj in storage.all("Place").values()]
         return jsonify(places)
 
