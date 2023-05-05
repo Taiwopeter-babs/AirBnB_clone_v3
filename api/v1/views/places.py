@@ -117,7 +117,7 @@ def places_search():
     Place object in every city in `cities` and every Place object in each
     City object in each State object in cities will be returned
     """
-    if not request.json:
+    if not request.is_json:
         return make_response(jsonify("Not a JSON"), 400)
 
     request_dict = request.get_json()
